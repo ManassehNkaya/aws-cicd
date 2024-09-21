@@ -4,7 +4,7 @@ pipeline {
  environment {
     BRANCH_NAME = 'main'
     GIT_URL = 'https://github.com/ManassehNkaya/aws-cicd.git'
-    IMAGE_TAG = 'manassehnkaya/aws-cicd'
+    IMAGE_TAG = 'manassehnkaya/awscicd'
     IMAGE_VERSION = "${BUILD_NUMBER}"
 
  }
