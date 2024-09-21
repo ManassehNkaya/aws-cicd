@@ -1,15 +1,21 @@
 pipeline {
  agent any 
+
+ environment {
+    BRANCH_NAME = 'main'
+    GIT_URL = 'https://github.com/ManassehNkaya/aws-cicd.git'
+ }
   
   stages {
-   stage('build'){
+   stage('git checkout'){
     steps{
-        sh 'echo build'
+        git branch: 'main', "${BRANCH_NAME}", url: "${GIT_URL}"
     }
    }
-   stage('test'){
+   stage('docker build'){
     steps{
-        sh 'echo test'
+        sh 'docker build -t aws-cicd .'
+        sh 'docker images'
     }
    }
   }
