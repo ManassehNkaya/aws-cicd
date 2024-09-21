@@ -9,7 +9,7 @@ pipeline {
   stages {
    stage('git checkout'){
     steps{
-        git branch: 'main', "${BRANCH_NAME}", url: "${GIT_URL}"
+        git branch: 'main', "${BRANCH_NAME}", url:"${GIT_URL}"
     }
    }
    stage('docker build'){
